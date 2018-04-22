@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+.mySlides {display:none}
+</style>
+<body class="w3-content w3-border-left w3-border-right">
+
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-light-grey w3-collapse w3-bottom" style="z-index:3;width:260px;height:100%" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright"></i>
+    <h3>Start Feeling</h3>
+    <h3>Better Today!</h3>
+    <hr>
+    <form action="https://www.google.com/maps/search/hospitals+in+37916" width="600" target="_blank">
+      <p><label><i class="fa fa-calendar-check-o"></i> Check In</label></p>
+      <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY" name="CheckIn" required>    
+      <p><label><i class="fa fa-bullseye"></i> City or Zipcode </label></p>
+      <input class="w3-input w3-border" type="text" name="City or Zipcode" required>         
+      <p><label><i class="fa fa-male"></i> Service Needed</label></p>
+      <select>
+        <option value="other">(Other)</option>
+       <option value="service">Urgent Care</option>
+       <option value="service">Emergency Room</option>
+       <option value="service">Pediatrician</option>
+       <option value="service">General Physician</option>
+       <option value="service">Dentist</option>
+       <option value="service">Chiropractor</option>
+       <option value="service">Minute Clinic</option>
+       <option value="service">Dermatologist</option>
+      </select>              
+    </form>
+  </div>
+  <div id="calendar"></div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+   <div><button class="w3-button w3-block w3-green w3-left-align" onclick="document.getElementById('map').style.display='block'"><i class="fa fa-search w3-margin-right"></i>Search Availability</button></div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <span class="w3-bar-item">Rental</span>
+  <a href="javascript:void(0)" class="w3-right w3-bar-item w3-button" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-white" style="margin-left:260px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:80px"></div>
+
+  <!-- Slideshow Header -->
+  <!-- Navigation Bar -->
+<header class="w3-bar w3-white w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-green w3-mobile"><i class="fa fa-plus-square w3-margin-right"></i>QFMD</a>
+  <a href="#howitworks" class="w3-bar-item w3-button w3-mobile">About</a>
+  <a href="#about" class="w3-bar-item w3-button w3-mobile">How It Works</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile" onclick="document.getElementById('subscribe').style.display='block'">Sign Up/In</a>
+</header>
+<hr>
+  <div class="w3-container" id="apartment">
+    <h1 class="w3-text-green">QuickFixMD</h1>
+    <div class="w3-display-container mySlides">
+    <img src="Images/DoctorAndMan.jpg" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomleft w3-container w3-black">
+        <p></p>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+    <img src="/w3images/diningroom.jpg" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomleft w3-container w3-black">
+        <p></p>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+    <img src="/w3images/bedroom.jpg" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomleft w3-container w3-black">
+        <p></p>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+    <img src="/w3images/livingroom2.jpg" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomleft w3-container w3-black">
+        <p></p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="/w3images/livingroom.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(1)" title="">
+    </div>
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="/w3images/diningroom.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(2)" title="">
+    </div>
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="/w3images/bedroom.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(3)" title="">
+    </div>
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="/w3images/livingroom2.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(4)" title="">
+    </div>
+  </div>
+<hr>
+
+
+   <!-- How It Works -->
+  <div class="w3-container" id="about">    
+    <h3><strong>How It Works</strong></h3>
+    <p><h5>To find a medical facility near you, first sign in or sign up! Doing this will eliminate the pesky paperwork when you arrive at a doctor’s office. Next, go to the left sidebar to fill out the required information. A map will pop up with available facilities for that day. Select the office you prefer to then create and confirm your appointment.</h5>
+</p>
+    <p><button class="w3-button w3-green w3-third" onclick="document.getElementById('subscribe').style.display='block'">Subscribe</button></p>
+  </div>
+  <hr>
+
+<!-- About -->
+  <div class="w3-container" id="howitworks"> 
+    <h3><strong>About</strong></h3>
+    <p><h5>Our website is designed to make visiting the doctor much easier for both the patient and the doctor. When you create an account with us, your medical history will be given to any new doctor that you visit, so NO MORE PAPERWORK. Exciting right? Additionally, when you visit our website, you will never be put on hold. Make an appointment in as little as 2 minutes!</h5> </p>
+    <hr>
+  <div class="w3-container">
+    <h4><strong>The space</strong></h4>
+    <div class="w3-row w3-large">
+      <div class="w3-col s6">
+        <p><i class="fa fa-fw fa-male"></i> Max people: 4</p>
+        <p><i class="fa fa-fw fa-bath"></i> Bathrooms: 2</p>
+        <p><i class="fa fa-fw fa-bed"></i> Bedrooms: 1</p>
+      </div>
+      <div class="w3-col s6">
+        <p><i class="fa fa-fw fa-clock-o"></i> Check In: After 3PM</p>
+        <p><i class="fa fa-fw fa-clock-o"></i> Check Out: 12PM</p>
+      </div>
+    </div>
+    <hr>
+
+  <!-- Review -->
+    <div class="w3-container" id="patientreviews">
+    <h2>Thoughts?</h2>
+    <p><h5>Help us Help you:</h5></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Patient Name" required name="Name"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Patient Email" required name="Email"></p>
+  <button class="w3-button w3-padding-large w3-green w3-margin-bottom" onclick="document.getElementById('review').style.display='block'" style="width:100%;">Click to Send Feedback</button>
+  </div>
+  <hr>
+  
+  <!-- Contact -->
+  <div class="w3-container" id="contact">
+    <h2>Contact</h2>
+    <i class="fa fa-map-marker" style="width:30px"></i> Knoxville, TN<br>
+    <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
+    <i class="fa fa-envelope" style="width:30px"> </i> Email: thedoctors@mail.com<br>
+    <p><h5>Questions? Go ahead, ask them:</h5></p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+   <p><button class="w3-button w3-green w3-third" onclick="document.getElementById('MessageThankYou').style.display='block'">Send a Message</button></p>
+    </form>
+  </div>
+  <footer class="w3-container w3-padding-16" style="margin-top:32px">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></footer>
+
+<!--Social Media Links-->
+<footer class="w3-container w3-green w3-center w3-margin-top">
+  <p>Find us on social media.</p>
+  <a href="https://www.facebook.com/megan.reding">
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <a href="https://twitter.com/megan_reding?lang=en">
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+
+<!-- END OF PAGE CONTENT -->
+</div>
+
+
+<!--Reviews Modal-->
+<div id="review" class="w3-modal">
+  <div class="w3-modal-content">
+     <div class="container">
+      <span onclick="document.getElementById('review').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <h1>Reviews</h1>
+      <style>
+body {font-family: Arial;}
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: gray;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: green;
+}
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: green;
+}
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+</style>
+</head>
+<body>
+<p>Click on the buttons inside the tabbed menu:</p>
+<div class="tab">
+  <button class="tablinks" class="w3-button w3-green w3-third" onclick="openpage(event, 'OurWebpage')">Our Webpage</button>
+  <button class="tablinks" class="w3-button w3-green w3-third" onclick="openpage(event, 'Doctor')">Doctor</button>
+  <button class="tablinks" class="w3-button w3-green w3-third" onclick="openpage(event, 'Facility')">Facility</button>
+</div>
+<div id="OurWebpage" class="tabcontent">
+  <h3>Tell us how to improve our site!</h3>
+      <p>Please Rate Your Experience (5=best) <select>
+        <option value="other">(Select)</option>
+       <option value="service">1</option>
+       <option value="service">2</option>
+       <option value="service">3</option>
+       <option value="service">4</option>
+       <option value="service">5</option>
+      </select>  </p> 
+      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p><button class="w3-button w3-green w3-third" onclick="document.getElementById('ReviewThankYou').style.display='block'">Send Feedback</button></p>
+      <br><br>
+</div>
+<div id="Doctor" class="tabcontent">
+  <h3>Help our Doctor's serve you as best they can!</h3>
+    <p><input class="w3-input w3-border" type="text" placeholder="Doctor Name" required name="Doctor Name"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Facility" required name="Facility"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Date Visited" required name="Date Visited"></p>
+       <p>Please Rate Your Experience (5=best) <select>
+        <option value="other">(Select)</option>
+       <option value="service">1</option>
+       <option value="service">2</option>
+       <option value="service">3</option>
+       <option value="service">4</option>
+       <option value="service">5</option>
+      </select>  </p>      
+      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p><button class="w3-button w3-green w3-third" onclick="document.getElementById('ReviewThankYou').style.display='block'">Send Feedback</button></p>
+       <br><br>
+</div>
+<div id="Facility" class="tabcontent">
+  <h3>What can our partners do to improve your experience while visiting?</h3>
+      <p><input class="w3-input w3-border" type="text" placeholder="Facility" required name="Facility"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Date Visited" required name="Date Visited"></p>
+      <p>Please Rate Your Experience (5=best) <select>
+        <option value="other">(Select)</option>
+       <option value="service">1</option>
+       <option value="service">2</option>
+       <option value="service">3</option>
+       <option value="service">4</option>
+       <option value="service">5</option>
+      </select>  </p> 
+      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p><button class="w3-button w3-green w3-third" onclick="document.getElementById('ReviewThankYou').style.display='block'">Send Feedback</button></p>
+       <br><br>
+    </div>
+<script>
+function openpage(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+     </div>
+  </div>
+</div>
+
+<!--Contact Thank You-->
+<div id="MessageThankYou" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom w3-padding-large">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('MessageThankYou').style.display='none'" class="fa fa-remove w3-button w3-xlarge w3-right w3-transparent"></i>
+      <h1>Thank You for Your Message!</h1>
+      <p><h3>We will get back to you as soon as possible.</h3></p>
+    </div>
+   </div>
+  </div>  
+
+<!--Review Thank You-->
+<div id="ReviewThankYou" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom w3-padding-large">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('ReviewThankYou').style.display='none'" class="fa fa-remove w3-button w3-xlarge w3-right w3-transparent"></i>
+      <h1>Thank You for Your Feedback!</h1>
+    </div>
+   </div>
+  </div>  
+
+<!--SignUp Thank You-->
+<div id="SignUpThankYou" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom w3-padding-large">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('SignUpThankYou').style.display='none'" class="fa fa-remove w3-button w3-xlarge w3-right w3-transparent"></i>
+      <h1>Thank You for Signing Up!</h1>
+      <p><h3>Now simply search for a facility near you to start feeling better today!</h3></p>
+    </div>
+   </div>
+  </div>  
+
+<!-- subscribe Modal -->
+<div id="subscribe" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom w3-padding-large">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('subscribe').style.display='none'" class="fa fa-remove w3-button w3-xlarge w3-right w3-transparent"></i>
+      <h2 class="w3-wide">SIGN IN</h2>
+      <p>Sign In or Sign up to start feeling better today.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Username" name="Username" required></p>
+      <p><input class="w3-input w3-border" type="password" placeholder="Password" name="Password" required></p>
+      <button type="button" class="w3-button w3-padding-large w3-green w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'">Sign In</button>
+
+<!--SIGN UP BUTTON/PAGE-->       
+<style>
+body {font-family: "Raleway", Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+button:hover {
+    opacity:1;
+}
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: green;
+    padding-top: 50px;
+}
+/* Modal Content/Box */
+.modal-content {
+    background-color: white;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+/* Style the horizontal ruler */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+</style>
+<body>
+<button class="w3-button w3-padding-large w3-green w3-margin-bottom" onclick="document.getElementById('id01').style.display='block'" style="width:100%;">Sign Up</button>
+
+<!-- Sign up Modal-->
+<div id="id01" class="w3-modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="First and Last Name" name="Name" required><p>
+       <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter email" name="Email" required><p>
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="enter Username" name="Username" required><p>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required><p>
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required><p>
+      <label for="birthday"><b>Birthday</b></label>
+      <input type="text" placeholder="MM DD YYY" name="Birthday" required><p>
+     <label for="weight"><b>Weight</b></label>
+     <input type="text" placeholder="Weight" name="Weight" required><p>  
+     <label for="height"><b>Height</b></label>
+     <input type="text" placeholder="Height" name="Height" required> 
+      <br>
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+
+
+        <!--Sign up Button to Thank You Message-->    
+<style>
+body {font-family: "Raleway", Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+button:hover {
+    opacity:1;
+}
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: green;
+    padding-top: 50px;
+}
+/* Modal Content/Box */
+.modal-content {
+    background-color: white;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+/* Style the horizontal ruler */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+        <button type="button" onclick="document.getElementById('SignUpThankYou').style.display='block'" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+    </div>
+  </div>
+</div>
+
+<!--Appointment Modal-->
+<div id="AppointmentForm" class="w3-modal">
+  <div class="w3-modal-content">
+     <div class="container">
+      <span onclick="document.getElementById('AppointmentForm').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <p> Make an Appointment!</p>
+    </div>
+   </div>
+  </div>    
+
+<!--map Modal -->
+<div id="map" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom w3-padding-large">
+    <div class="w3-container w3-white w3-center">
+      <div class="w3-sidebar w3-bar-block" style="width:15%; height:70% "> 
+  <h4>Places Near You!</h4><hr>
+<p><input type="checkbox" name="facility" value="Walgreens"> Walgreens Minute Clinic <br> 40001 Chapman Highway, <br> Knoxville,TN 37920 <br> (865) 573-0081 <br> <a href="https://www.walgreens.com/locator/walgreens-4001+chapman+hwy-knoxville-tn-37920/id=4169">Website</a>
+  <p><input type="checkbox" name="facility" value="University of Tennessee Medical Center"> UT Medical Center <br> 1924 Alcoa Hwy <br> Knoxville, TN 37920 <br> (865)305-9000  <br> <a href="http://www.utmedicalcenter.org">Website</a>
+  <p><input type="checkbox" name="facility" value="Downtown Dentist"> Downtown Dentist <br> 123 N Concord St <br> Knoxville, TN 37919 <br> (865)524-1655  <br> <a href="http://www.downtowndentalknoxville.com/">Website</a>
+  <p><input type="checkbox" name="facility" value="Cornerstone Chiropractor"> Cornerstone Chiropractor <br> 4465 Kingston Pike <br> Knoxville, TN 37919 <br> (865)247-0458  <br> <a href="http://www.cornerstonechiropracticknox.com">Website</a>
+  <p><input type="checkbox" name="facility" value="East Tennessee Children's Hospital"> East Tennessee Children's Hospital <br> 2048 W Clinch Ave <br> Knoxville, TN 37916 <br> (865)541-8000  <br> <a href="https://www.etch.com/">Website</a>
+<button onclick="document.getElementById('AppointmentForm').style.display='block'"
+class="w3-button">Make Appointment!</button>
+</div>
+<div style="margin-left:25%">
+      <i onclick="document.getElementById('map').style.display='none'" class="fa fa-remove w3-button w3-xlarge w3-right w3-transparent"></i>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12164413.889214585!2d-97.23425940692388!3d37.1264697086591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885c17e0aa4a6f21%3A0xa4914a748b5294c!2sUniversity+of+Tennessee!5e0!3m2!1sen!2sus!4v1524059451902" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+<script>
+// Script to open and close sidebar when on tablets and phones
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Slideshow Apartment Images
+var slideIndex = 1;
+showDivs(slideIndex);
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
+}
+</script>
+
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
